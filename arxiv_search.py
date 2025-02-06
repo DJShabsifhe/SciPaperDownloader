@@ -195,5 +195,5 @@ def search_arxiv_and_save(search_string, start_date="0", end_date="0", search_al
         driver.quit()
 
 if __name__ == "__main__":
-    search_arxiv_and_save("machine learning", start_date="2020-01", end_date="2023-12-31", search_all_fields=True)
+    search_arxiv_and_save("machine learning", start_date="2023-01", end_date="2023-12-31", search_all_fields=True)
     # simple_search("something")
