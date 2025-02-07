@@ -4,6 +4,9 @@ import os
 from pathlib import Path
 from arxiv_dl.__main__ import download_paper
 import random
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 def download_with_retry(index, output_dir, max_retries=3, base_delay=5):
     for attempt in range(max_retries):
@@ -40,7 +43,6 @@ for entry in data:
         month_indices[year_month] = []
     month_indices[year_month].append(arxiv_index.split(":")[1])
 
-# 下载论文
 failed_papers = []
 for year_month, indices in sorted(month_indices.items()):
     output_dir = Path(year_month)
